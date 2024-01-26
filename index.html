@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Calendar</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href='fullcalendar/main.css' rel='stylesheet' />
+    <style>
+        /* Custom styles will be added here */
+    </style>
 </head>
-<body>
-    <div id="calendar"></div>
-    <div id="birthday-list"></div>
-    <script src="script.js"></script>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl text-center my-4">Birthday Calendar</h1>
+        
+        <!-- Input Section -->
+        <div class="mb-8">
+            <form id="birthdayForm" class="flex flex-col md:flex-row justify-center gap-4">
+                <input type="text" id="nameInput" placeholder="Name" class="p-2 border rounded" required>
+                <input type="date" id="birthdayInput" class="p-2 border rounded" required>
+                <button type="submit" class="p-2 bg-blue-500 text-white rounded">Add Birthday</button>
+            </form>
+        </div>
+        
+        <!-- Calendar Section -->
+        <div id="calendar" class="mb-8"></div>
+        
+        <!-- Upcoming Birthdays Section -->
+        <div>
+            <h2 class="text-2xl my-4">Upcoming Birthdays</h2>
+            <ul id="upcomingBirthdays" class="list-none"></ul>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src='fullcalendar/main.js'></script>
+    <script src="app.js"></script>
 </body>
 </html>
